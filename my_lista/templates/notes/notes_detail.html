@@ -1,0 +1,12 @@
+{% extends "notes/base.html" %}
+{% load markdownify %}
+
+{% block title %}My Notes - {{ note.title }}{% endblock %}
+
+{% block content %}
+<h3>{{ note.title }}</h3>
+<p class="note_body">{{ note.body|markdownify }}</p>
+<p><a href="/">Back to Notes</a></p>
+
+
+{% endblock %}

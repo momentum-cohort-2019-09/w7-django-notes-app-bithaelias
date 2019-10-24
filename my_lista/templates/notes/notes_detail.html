@@ -1,12 +1,15 @@
 {% extends "notes/base.html" %}
+{% load static %}
 {% load markdownify %}
 
 {% block title %}My Notes - {{ note.title }}{% endblock %}
 
 {% block content %}
-<h3>{{ note.title }}</h3>
-<p class="note_body">{{ note.body|markdownify }}</p>
-<p><a href="/">Back to Notes</a></p>
-
+<div id="old-note">
+    <h3>{{ note.title }}</h3>
+    <p class="note_body">{{ note.body|markdownify }}</p>
+</div>
+<!-- <p><button class="back-to-note"><a href="/">Back to Notes</a></button></p> -->
+<p><button class="back-to-note" onclick="location.href='/'" type="button">Back to Notes</button></p>
 
 {% endblock %}

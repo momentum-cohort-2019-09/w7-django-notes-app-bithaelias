@@ -1,13 +1,16 @@
 {% extends "notes/base.html" %}
+{% load static %}
 
 {% block content %}
 <ul id="notes">
   {% for note in notes %}
-  <li>
-    <a href="/notes/{{ note.pk }}">{{ note.title }}</a>
+  <li style="list-style-type: none;">
+    <p id="list-title"><a href="/notes/{{ note.pk }}" style="text-decoration: none;">{{ note.title }}</a></p>
   </li>
   {% endfor %}
 </ul>
 
-<button type="submit"><a href="{% url 'create_note' %}">Create New Note</a></button>
+<button id="create_note_button" type="submit"><a href="{% url 'create_note' %}" style="text-decoration: none;">Create
+    New Note</a></button>
+
 {% endblock %}

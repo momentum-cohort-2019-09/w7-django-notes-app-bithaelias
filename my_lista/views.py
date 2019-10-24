@@ -18,6 +18,7 @@ def notes_detail(request, pk):
                   {"note": note})   
                   
 def create_note(request):
+    
     if request.method == "POST":  # form was submitted
         form = NoteForm(request.POST)
         if form.is_valid():
@@ -26,4 +27,4 @@ def create_note(request):
     else:
         form = NoteForm()
 
-    return render(request, "my_lista/create_note.html", {"form": form})    
+    return render(request, "notes/create_note.html", {"form": form})    

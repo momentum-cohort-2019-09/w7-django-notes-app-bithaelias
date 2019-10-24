@@ -6,8 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdn.shoelace.style/1.0.0-beta24/shoelace.css">
+    <!-- <link rel="stylesheet" href="https://cdn.shoelace.style/1.0.0-beta24/shoelace.css"> -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Reenie+Beanie|Roboto+Slab&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Reenie+Beanie|Roboto+Slab&display=swap"
+        rel="stylesheet">
     <!-- <link href="https://fonts.googleapis.com/css?family=Spectral&display=swap" rel="stylesheet"> -->
     <!-- <script src="{% static 'js/bad.js' %}" defer></script> -->
     <title>Notes</title>
@@ -18,7 +25,7 @@
         <h1>Notes</h1>
     </header>
 
-    <div>
+    <div id="background" style="background:url('my_lista/sticky-notes-background.jpg') no-repeat">
         {% block content %}
         {% endblock %}
     </div>

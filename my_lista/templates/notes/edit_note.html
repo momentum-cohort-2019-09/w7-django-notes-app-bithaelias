@@ -2,9 +2,9 @@
 {% load static %}
 
 {% block content %}
-<h2>Create a new note</h2>
+<h2>Edit "{{ note.title }}"</h2>
 
-<form action="" id="old-note" method=" POST">
+<form action="" id="old-note" method="POST">
     {% csrf_token %}
 
     {% for field in form %}
@@ -18,7 +18,9 @@
     </div>
     {% endfor %}
 
-    <button class="add-note" type="submit">Add note</button>
+    <button class="old-note" type="submit">Save</button>
+    <a href="{% url 'delete_note' pk=note.pk %}" "class=" button-danger">Delete</a>
+    <a href="{% url 'notes_list' %}" class="button">Cancel</a>
 </form>
 
 {% endblock %}

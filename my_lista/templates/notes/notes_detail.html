@@ -11,5 +11,5 @@
 </div>
 <!-- <p><button class="back-to-note"><a href="/">Back to Notes</a></button></p> -->
 <p><button class="back-to-note" onclick="location.href='/'" type="button">Back to Notes</button></p>
-
+<button><a href="{% url 'edit_note' pk=note.pk %}">Edit</a></button>
 {% endblock %}

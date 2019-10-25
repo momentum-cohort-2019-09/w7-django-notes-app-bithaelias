@@ -24,5 +24,4 @@ urlpatterns = [
     path('notes/new/', views.create_note, name='create_note'),
     path('notes/<int:pk>/edit', views.edit_note, name='edit_note'),
     path('notes/<int:pk>/delete', views.delete_note, name="delete_note"),
-    
 ]

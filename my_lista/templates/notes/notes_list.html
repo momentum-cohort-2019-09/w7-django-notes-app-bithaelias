@@ -2,15 +2,24 @@
 {% load static %}
 
 {% block content %}
+<nav class="front-page-buttons">
+  <button id="create_note_button" type="submit"><a href="{% url 'create_note' %}" style="text-decoration: none;">Create
+      New Note</a></button>
+  <form id="search" action='' method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+  </form>
+</nav>
+
+
 <ul id="notes">
   {% for note in notes %}
-  <li style="list-style-type: none;">
-    <p id="list-title"><a href="/notes/{{ note.pk }}" style="text-decoration: none;">{{ note.title }}</a></p>
+  <li id="list-title" style="list-style-type: none;"><a href="/notes/{{ note.pk }}" style="text-decoration: none;">
+      <p>{{ note.title }}</p>
+      <p>{{ note.body }}</p>
+    </a>
   </li>
   {% endfor %}
 </ul>
-
-<button id="create_note_button" type="submit"><a href="{% url 'create_note' %}" style="text-decoration: none;">Create
-    New Note</a></button>
 
 {% endblock %}

@@ -5,11 +5,13 @@
 {% block title %}My Notes - {{ note.title }}{% endblock %}
 
 {% block content %}
-<div id="old-note">
-    <h3>{{ note.title }}</h3>
-    <p class="note_body">{{ note.body|markdownify }}</p>
+<div class="center-note">
+    <div id="old-note" class="detail">
+        <h3>{{ note.title }}</h3>
+        <p class="note_body">{{ note.body|markdownify }}</p>
+        <button><a href="{% url 'edit_note' pk=note.pk %}">Edit</a></button>
+    </div>
 </div>
-<!-- <p><button class="back-to-note"><a href="/">Back to Notes</a></button></p> -->
-<p><button class="back-to-note" onclick="location.href='/'" type="button">Back to Notes</button></p>
-<button><a href="{% url 'edit_note' pk=note.pk %}">Edit</a></button>
+<button class="back-to-note" onclick="location.href='/'" type="button">Back to Notes</button>
+
 {% endblock %}

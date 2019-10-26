@@ -1,0 +1,14 @@
+{% extends "notes/base.html" %}
+{% load static %}
+
+{% block content %}
+<h3>Search Results</h3>
+<ul id="notes">
+    {% for note in notes %}
+    <li style="list-style-type: none;">
+        {{ note.title }}, {{ note.body}}
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -3,24 +3,25 @@
 
 {% block content %}
 <h2>Edit "{{ note.title }}"</h2>
+<div class="detail">
+    <form action="" id="old-note" class="detail" method="POST">
+        {% csrf_token %}
 
-<form action="" id="old-note" method="POST">
-    {% csrf_token %}
+        {% for field in form %}
+        <div class="input-field {% if field.errors %}input-invalid{% endif %}">
+            {{ field.label_tag }}
+            {% for error in field.errors %}
+            <div class="text-danger"><small>{{ error }}</small></div>
+            {% endfor %}
 
-    {% for field in form %}
-    <div class="input-field {% if field.errors %}input-invalid{% endif %}">
-        {{ field.label_tag }}
-        {% for error in field.errors %}
-        <div class="text-danger"><small>{{ error }}</small></div>
+            {{ field }}
+        </div>
         {% endfor %}
 
-        {{ field }}
-    </div>
-    {% endfor %}
-
-    <button class="old-note" type="submit">Save</button>
-    <a href="{% url 'delete_note' pk=note.pk %}" "class=" button-danger">Delete</a>
-    <a href="{% url 'notes_list' %}" class="button">Cancel</a>
-</form>
+        <button class="old-note" type="submit">Save</button>
+        <a href="{% url 'delete_note' pk=note.pk %}" "class=" button-danger">Delete</a>
+        <a href="{% url 'notes_list' %}" class="button">Cancel</a>
+    </form>
+</div>
 
 {% endblock %}

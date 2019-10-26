@@ -1,11 +1,20 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from my_lista.models import Note
-from my_lista.forms import NoteForm
+from my_lista.forms import NoteForm, SearchForm
+
 
 def notes_list(request):
     allnotes = Note.objects.all()
+    if request.method =="POST":
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            search_word = form.cleaned_data['search_word'].lower()
+            allnotes = allnotes.filter(title__icontains=search_word)
+    else:
+        form = SearchForm()
     return render(request, "notes/notes_list.html", {
         "notes": allnotes,
+        "form": form,
     })
     
 
@@ -20,6 +29,7 @@ def create_note(request):
         form = NoteForm(request.POST)
         if form.is_valid():
             note = form.save()
+
             return redirect(to='notes_list')
     else:
         form = NoteForm()
@@ -48,4 +58,25 @@ def delete_note(request, pk):
         note.delete()
         return redirect(to='notes_list')
 
-    return render(request, 'notes/delete_note.html', {"note":note})    
+    return render(request, 'notes/delete_note.html', {"note":note}) 
+
+
+def search_result(request):
+    pass
+    
+    # if ('q' in request.GET) and request.GET['q'].strip():
+    #     query_string = request.GET['q']
+
+    #     entry_query = get_query(query_string, ['title', 'body',])
+
+    #     found_entries = Note.objects.filter(entry_query).order_by('-pub_date')
+
+    # return render_to_response('search/search_results.html',
+    #                       { 'query_string': query_string, 'found_entries': found_entries },
+    #                       context_instance=RequestContext(request))
+
+     
+
+
+
+

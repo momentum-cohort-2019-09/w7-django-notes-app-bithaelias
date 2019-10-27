@@ -11,15 +11,20 @@
   </form>
 </nav>
 
+<div id="display-notes">
+  <ul id="notes">
+    {% for note in notes %}
 
-<ul id="notes">
-  {% for note in notes %}
-  <li id="list-title" style="list-style-type: none;"><a href="/notes/{{ note.pk }}" style="text-decoration: none;">
-      <p>{{ note.title }}</p>
-      <p>{{ note.body }}</p>
-    </a>
-  </li>
-  {% endfor %}
-</ul>
+    <li id="list-title" style="list-style-type: none;">
+      <a href="/notes/{{ note.pk }}" style="text-decoration: none;">
+        <h1 id="title">{{ note.title }}</h1>
+        <h4 id="body">{{ note.body }}</h4>
+      </a>
+    </li>
+
+    {% endfor %}
+  </ul>
+</div>
+
 
 {% endblock %}

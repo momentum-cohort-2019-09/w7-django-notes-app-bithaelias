@@ -25,7 +25,7 @@ body {
 	justify-content: space-evenly;
 	padding: 10px;
 	background-color: rgb(247 236 151);
-	font-family: 'Reenie Beanie', cursive;
+	font-family: 'Indie Flower', cursive;
 	box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
 	transition: transform .2s;
 	transform: rotate(-6deg);
@@ -33,14 +33,14 @@ body {
 	border-bottom-right-radius: 60px 5px;
 }
 #old-note h3 {
-	font-size: 250%;
+	font-size: larger;
 	font-weight: bold;
 	padding-bottom: 10px;
 }
 
 #old-note p {
-	font-family: "Reenie Beanie", arial, sans-serif;
-	font-size: 225%;
+	font-family: 'Indie Flower', cursive;
+	font-size: large;
 }
 
 #old-note:hover {
@@ -115,7 +115,7 @@ body {
 	text-align: center;
 	padding: 10px;
 	background-color: rgb(247 236 151);
-	font-family: 'Reenie Beanie', cursive;
+	font-family: 'Indie Flower', cursive;
 	box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
 	transition: transform .2s;
 	color: rgb(44, 46, 48);
@@ -230,6 +230,7 @@ label {
 	justify-content: center;
 	flex-wrap: nowrap;
 	display: none;
+	margin-top: 5px;
 }
 
 a {
@@ -287,16 +288,29 @@ a {
 	text-decoration: none;
 }
 #title {
-	font-size: xx-large;
+	font-size: x-large;
 }
 #body {
-	font-size: xx-large;
+	font-size: large;
 }
 #id_title {
 	width: 250px;
 	height: 25px;
+	color: black;
 }
 #id_body {
 	width: 97%;
 	height: 90%;
+	color: rgb(133, 124, 126);
+}
+#save {
+	background-image: url('../images/icons8-save-close-50.png');
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	border: none;
+	cursor: pointer;
+	height: 50px;
+	width: 50px;
+	vertical-align: middle;
 }

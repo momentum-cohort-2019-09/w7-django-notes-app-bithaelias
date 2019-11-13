@@ -8,8 +8,8 @@ pylint = "*"
 
 [packages]
 django = "*"
-
 django-markdownify = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.7"

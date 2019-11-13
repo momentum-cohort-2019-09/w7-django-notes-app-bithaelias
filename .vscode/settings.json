@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "/Users/bithaelias/.local/share/virtualenvs/w7-django-notes-app-bithaelias-7UN_7wSQ/bin/python"
+    "python.pythonPath": "/Users/bithaelias/.local/share/virtualenvs/w7-django-notes-app-bithaelias-7UN_7wSQ/bin/python",
+    "editor.fontFamily": "Monaco, 'Courier New', monospace"
 }
